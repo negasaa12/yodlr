@@ -2,7 +2,7 @@ import React from "react";
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-const RegisterForm = ()=>{
+const RegisterForm = ({onRegister})=>{
 
     const initial_State = {
         firstName: "",
@@ -26,10 +26,10 @@ const RegisterForm = ()=>{
       
       const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, price, description, category } = formData;
-        // additem(name, price, description, category);
+        // const { firstName, lastName,email,state } = formData;
+        onRegister(formData)
         setFormData(initial_State);
-        navigate(`/${category}`);
+        navigate("/");
       };
 
 
@@ -38,7 +38,7 @@ const RegisterForm = ()=>{
         <h1> Sign Up</h1>
 
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="firstName" > First Name</label>
                     <input
                     type="text"
