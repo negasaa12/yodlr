@@ -26,10 +26,10 @@ const RegisterForm = ({onRegister})=>{
       
       const handleSubmit = (e) => {
         e.preventDefault();
-        // const { firstName, lastName,email,state } = formData;
+ 
         onRegister(formData)
         setFormData(initial_State);
-        navigate("/");
+        navigate("/admin");
       };
 
 

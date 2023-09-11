@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, NavLink , useNavigate} from "react-router-dom";
 import UserList from "./UsersList";
+import Home from "./Home";
 import RegisterForm from "./RegisterForm";
 import axios from 'axios';
 import {useState, useEffect} from "react";
@@ -25,7 +26,7 @@ const RoutePaths = ()=>{
         }
       };
       
-      
+      console.log(users)
     useEffect(() => {
       fetchUsers();
     }, []);
@@ -35,7 +36,7 @@ const RoutePaths = ()=>{
           // Send a POST request to your backend
           const response = await axios.post('http://localhost:3000/users', formData);
           // Handle the response as needed
-          setUsers({ registrationResult: response.data });
+           setUsers((prevUsers) => [...prevUsers, response.data]);
         } catch (error) {
           // Handle any errors that occurred during the request
           console.error(error);
@@ -58,8 +59,9 @@ const RoutePaths = ()=>{
 
 
         <Routes>
-        <Route exact path="/admin" element={<UserList allUsers={users}/>}></Route>
-        <Route exact path="/register" element={<RegisterForm onRegister={handleUserRegistration}/>} ></Route>
+            <Route exact path="/" element={<Home/>}> </Route>
+            <Route exact path="/admin" element={<UserList allUsers={users}/>}></Route>
+            <Route exact path="/register" element={<RegisterForm onRegister={handleUserRegistration}/>} ></Route>
        </Routes>
         </>
     )
