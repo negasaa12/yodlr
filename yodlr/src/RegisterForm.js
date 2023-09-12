@@ -29,13 +29,13 @@ const RegisterForm = ({onRegister})=>{
  
         onRegister(formData)
         setFormData(initial_State);
-        navigate("/admin");
+        navigate("/users");
       };
 
 
     return(
         <>
-        <h1> Sign Up</h1>
+        <h1> Sign Up </h1>
 
         <div>
             <form onSubmit={handleSubmit}>

@@ -1,24 +1,27 @@
 import React from "react";
 import { useEffect, useState } from 'react';
-
+import User from "./User";
 
 const UserList = ({allUsers})=>{
 
     const [users, setUsers] = useState(allUsers);
     const [error, setError] = useState(null);
-
-
+    console.log(users)
+    
+    useEffect(()=>{
+      setUsers(allUsers)
+    }, [allUsers])
   
     return (
       <div >
         <h1>Users</h1>
 
-        {error ? (
-          <p>Error: {error.message}</p>
+        {users.length === 0? (
+          <p>Loading...</p>
         ) : (
           <ul>
             {users.map((user) => (
-              <li key={user.id}>{user.email} {user.firstName}, {user.lastName}</li>
+             <User firstName={user.firstName} lastName={user.lastName} email={user.email}/>
             ))}
           </ul>
         )}
