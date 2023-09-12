@@ -5,7 +5,7 @@ import Home from "./Home";
 import RegisterForm from "./RegisterForm";
 import axios from 'axios';
 import {useState, useEffect} from "react";
-
+import NavBar from "./NavBar";
 const RoutePaths = () =>{
     
     const [users, setUsers] = useState([]);
@@ -50,16 +50,7 @@ const RoutePaths = () =>{
     
     return (
         <>
-        <nav>
-            <ul>
-                <li>
-                    <NavLink className="nav-NavLink" to="/"> Home</NavLink>
-                    <NavLink to="/users" > Admin</NavLink>
-
-                    <NavLink className="nav-NavLink" exact to="/register"> Register</NavLink>
-                </li>
-            </ul>
-        </nav>
+       <NavBar/>
 
 
         <Routes>

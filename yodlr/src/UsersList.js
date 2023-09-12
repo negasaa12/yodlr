@@ -13,7 +13,7 @@ const UserList = ({allUsers})=>{
   
     return (
       <>
-      <h1 class="display-4">Users</h1>
+      <h1 className="home-heading">Users</h1>
       <div className="user-list-container">
         
   
@@ -23,7 +23,7 @@ const UserList = ({allUsers})=>{
           <ul>
             {users.map((user) => (
               <div className="user-item" key={user.id}>
-                <User firstName={user.firstName} lastName={user.lastName} email={user.email} />
+                <User firstName={user.firstName} lastName={user.lastName} email={user.email} status={user.state} />
               </div>
             ))}
           </ul>

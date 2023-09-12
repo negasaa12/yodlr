@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./Home.css"
 
 const Home = ()=>{
 
     return (
 
-        <h1> Yodler Design Challenge</h1>
+        <h1 className="home-heading"> Yodler Design Challenge</h1>
     )
 
 }

@@ -1,0 +1,36 @@
+/* NavBar.css */
+
+/* Style for the navigation container */
+.nav-container {
+    background-color: #9aa874; /* Background color for the navigation bar */
+    padding: 10px; /* Add padding for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  
+  /* Style for the navigation list */
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Style for each navigation item */
+  .nav-item {
+    margin-right: 20px; /* Add spacing between items */
+  }
+  
+  /* Style for navigation links */
+  .nav-link {
+    text-decoration: none;
+    color: #fff; /* Text color for links */
+    font-weight: bold;
+    font-size: 18px; /* Font size for links */
+  }
+  
+  /* Style for the active link */
+  .nav-link.active {
+    color: #f5a623; /* Highlight the active link with a different color */
+  }
+  
